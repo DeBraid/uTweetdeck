@@ -91,7 +91,6 @@ function getImageUrl(searchTerm, callback, errorCallback) {
 }
 
 function renderStatus(statusText) {
-  console.log('function renderStatus');
   document.getElementById('status').textContent = statusText;
 }
 
@@ -155,12 +154,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // hideProfilePics();w
-    var s = document.createElement('script');
-  // TODO: add "script.js" to web_accessible_resources in manifest.json
-  s.src = chrome.extension.getURL('cleaner-tweetdeck.js');
-  s.onload = function() {
-      this.parentNode.removeChild(this);
-  };
-  (document.head||document.documentElement).appendChild(s);
   
 });

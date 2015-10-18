@@ -1,24 +1,15 @@
 {
-    "manifest_version": 2,
     "name": "uTweetdeck",
-    "description": "This extension removes profile pictures from tweetdeck.twitter.com",
     "version": "1.0",
+    "manifest_version": 2,
+    "description": "This extension removes profile pictures from tweetdeck.twitter.com",
     "browser_action": {
         "default_icon": "broom-icon.png",
         "default_popup": "popup.html"
     },
-    "permissions": [
-      "activeTab", 
-      "https://ajax.googleapis.com/",
-      "https://tweetdeck.twitter.com/#",
-      "https://tweetdeck.twitter.com/"
-    ],
     "content_scripts": [{
-        "js": ["cleaner-tweetdeck.js"],
-        "matches": [
-            "https://tweetdeck.twitter.com/#",
-            "https://tweetdeck.twitter.com/"
-        ]
+        "matches": [ "https://tweetdeck.twitter.com/" ],
+        "js": [ "contentscript.js" ]
     }],
-    "web_accessible_resources": ["cleaner-tweetdeck.js"]
+    "web_accessible_resources": ["cleanertweetdeck.js"]
 }
