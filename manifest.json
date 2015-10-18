@@ -1,6 +1,6 @@
 {
     "name": "uTweetdeck",
-    "version": "1.0",
+    "version": "1.1",
     "manifest_version": 2,
     "description": "This extension removes profile pictures from tweetdeck.twitter.com",
     "browser_action": {
