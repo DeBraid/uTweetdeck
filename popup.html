@@ -1,9 +1,4 @@
 <!doctype html>
-<!--
-This page is shown when the extension button is clicked, because the
-"browser_action" field in manifest.json contains the "default_popup" key with
-value "popup.html".
--->
 <html>
     <head>
         <title>uTweetdeck Popup</title>
@@ -11,9 +6,9 @@ value "popup.html".
             body {
                 font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
                 font-size: 100%;
+                background-color: #2b7bb9;
             }
             #status {
-                /* avoid an excessively wide status text */
                 white-space: pre;
                 text-overflow: ellipsis;
                 overflow: hidden;
@@ -22,7 +17,7 @@ value "popup.html".
         </style>
         <script src="popup.js"></script>
     </head>
-    <body style="background-color:#2b7bb9;">
+    <body>
     	<header>
 	        <h1>uTweetdeck</h1>
 	        <h4>Less images, more text.</h4>
