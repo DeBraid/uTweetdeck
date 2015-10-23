@@ -1,12 +1,34 @@
 (function initCleanerTweetdeckIIFE () {
-    console.log('running function initCleanerTweetdeckIIFE');
     var s_ajaxListener = new Object();
     s_ajaxListener.tempOpen = XMLHttpRequest.prototype.open;
     s_ajaxListener.tempSend = XMLHttpRequest.prototype.send;
 
     s_ajaxListener.callback = function() {
         // runs on XHR events
-        // to remove profile pics
+        var tweet = $('.tweet');
+
+        if (!tweet) {
+            console.log('___ uTweetdeck ___: Wait for it...');
+            return;
+        } else {
+            console.log('___ uTweetdeck ___: Swabbing the decks!');
+            removeProfilePics();
+            shrinkImages();
+
+        };
+        
+    }
+
+    function shrinkImages () {
+        var pics = $('.js-column .tweet .js-media-preview-container');
+
+        pics.css({ 
+            'max-height' : '25px', 
+            overflow : 'hidden' 
+        });
+    }
+
+    function removeProfilePics () {
         $('.tweet-avatar.avatar.pull-right').remove();
         $('.tweet').css({ 'padding-left': '5px' });
     }
