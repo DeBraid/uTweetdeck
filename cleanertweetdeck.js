@@ -7,8 +7,8 @@
     s_ajaxListener.callback = function() {
         // runs on XHR events
         // to remove profile pics
-        $(".tweet-avatar.avatar.pull-right").remove();
-        $(".tweet").css({ "padding-left": "5px" });
+        $('.tweet-avatar.avatar.pull-right').remove();
+        $('.tweet').css({ 'padding-left': '5px' });
     }
 
     XMLHttpRequest.prototype.open = function(a, b) {
