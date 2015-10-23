@@ -3,18 +3,17 @@
     s_ajaxListener.tempOpen = XMLHttpRequest.prototype.open;
     s_ajaxListener.tempSend = XMLHttpRequest.prototype.send;
 
+    // runs each XHR events
     s_ajaxListener.callback = function() {
-        // runs on XHR events
         var tweet = $('.tweet');
 
-        if (!tweet) {
-            console.log('___ uTweetdeck ___: Wait for it...');
-            return;
-        } else {
-            console.log('___ uTweetdeck ___: Swabbing the decks!');
+        if (tweet.length > 0) {
+            console.log('uTweetdeck: Swabbing the decks!');
             removeProfilePics();
             shrinkImages();
-
+        } else {
+            console.log('uTweetdeck: Wait for it...');
+            return;
         };
         
     }
