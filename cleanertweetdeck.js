@@ -11,11 +11,17 @@
             console.log('uTweetdeck: Swabbing the decks!');
             removeProfilePics();
             shrinkImages();
+            makeHomeColumnWider();
         } else {
             console.log('uTweetdeck: Wait for it...');
             return;
         };
         
+    }
+
+    function makeHomeColumnWider () {
+        $('.column-type-home').css({ width : '400px' });
+        console.log('running makeHomeColumnWider();')
     }
 
     function shrinkImages () {
