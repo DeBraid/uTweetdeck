@@ -19,9 +19,21 @@
         
     }
 
+
     function makeHomeColumnWider () {
-        $('.column-type-home').css({ width : '400px' });
-        console.log('running makeHomeColumnWider();')
+        var homeInput = $('#home-column-width');
+        var newHtml = '<input type="text" placeholder="400" id="home-column-width" style="width: 45px; float: right; margin-top: 1em;">' +
+            '<span class="attribution txt-mute txt-sub-antialiased pull-right" style="margin-right: 0.5em;">Width</span>'; 
+
+        if (homeInput.length == 0) {        
+            $('.column-type-home h1').append(newHtml);
+        };
+        var newWidth = homeInput.val() || '400', 
+            width = newWidth + 'px';
+        
+        $('.column-type-home').css({ 
+            width :  width
+        });
     }
 
     function shrinkImages () {
